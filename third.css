@@ -61,13 +61,13 @@ header input {
 }
 
 .gallery-item:nth-child(1) {
-    background-image: url('html.jpg');
+    background-image: url('third_4.jpg');
 }
 .gallery-item:nth-child(2) {
-    background-image: url('css.jpg');
+    background-image: url('third_5.jpg');
 }
 .gallery-item:nth-child(3) {
-    background-image: url('js.jpg');
+    background-image: url('third_6.jpg');
 }
 
 .gallery-item:hover {
@@ -126,3 +126,4 @@ footer {
         text-align: center;
     }
 }
+
