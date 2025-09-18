@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Developer Portfolio Submission</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #b3b3b3;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: #cdffff;
+      padding: 25px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    legend {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #000000;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0 4px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    input[type="url"],
+    input[type="search"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #000000;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 6px;
+    }
+
+    .btn-group {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: 1px solid rgb(0, 255, 250);
+      border-radius: 4px;
+      background-color:rgb(0, 0, 0);
+      color: rgb(0, 255, 250);
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      border: 1px solid rgb(0, 0, 0);
+      background-color: rgb(0, 255, 250);
+      color: rgb(0, 0, 0);
+    }
+
+    footer {
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Developer Portfolio Submission</h1>
+
+    <form action="/serverlogic" method="post">
+
+      <fieldset>
+        <legend>Personal Info</legend>
+
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="experience">Years of Experience:</label>
+        <input type="number" id="experience" name="experience" min="0" max="50" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Portfolio Details</legend>
+
+        <label for="portfolioUrl">Portfolio URL:</label>
+        <input type="url" id="portfolioUrl" name="portfolioUrl" required>
+
+        <label for="search">Linkedin URL:</label>
+        <input type="search" id="search" name="LinkedinUrl" required>
+
+        <label for="search">Github URL:</label>
+        <input type="search" id="search" name="GithubUrl" required>
+
+        <label for="bio">Short Bio:</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Bio" required></textarea>
+
+        <label for="role">Preferred Role:</label>
+        <select id="role" name="role" required>
+          <option value="">--Select--</option>
+          <option value="frontend">Frontend</option>
+          <option value="backend">Backend</option>
+          <option value="fullstack">Full Stack</option>
+          <option value="devops">DevOps</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label>Technologies Known:</label>
+        <input type="checkbox" id="html" name="tech_html" value="HTML">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" id="css" name="tech_css" value="CSS">
+        <label for="css">CSS</label>
+
+        <input type="checkbox" id="js" name="tech_js" value="JavaScript">
+        <label for="js">JavaScript</label>
+
+        <input type="checkbox" id="python" name="tech_python" value="Python">
+        <label for="python">Python</label>
+
+        <br><br>
+
+        <label>Availability:</label>
+        <input type="radio" id="fulltime" name="availability" value="Full-Time" required>
+        <label for="fulltime">Full-Time</label>
+
+        <input type="radio" id="freelance" name="availability" value="Freelance">
+        <label for="freelance">Freelance</label>
+      </fieldset>
+
+      <div class="btn-group">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </div>
+
+    </form>
+    <footer>
+        <p><strong>Allen Joshua R (URK23CS1138)</strong></p>
+    </footer>
+
+    <!-- Final trimmed version: Required fields only, styled for beginners -->
+  </div>
+</body>
+</html>

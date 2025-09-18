@@ -1,0 +1,98 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ffe6e6, #fff0f5);
+  text-align: center;
+  color: #333;
+}
+
+/* Header */
+h1 {
+  background: linear-gradient(90deg, #ff4b5c, #ff8a5c);
+  color: white;
+  padding: 20px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Cake Section */
+.cakes {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.cakes img {
+  width: 180px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+.cakes img:hover {
+  transform: scale(1.05);
+}
+.cakes p {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Order Box */
+.order-box {
+  background: white;
+  width: 400px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.order-box h2 {
+  margin-bottom: 15px;
+  color: #ff4b5c;
+}
+.order-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+button {
+  background: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #e63e4f;
+}
+
+/* Result */
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #228b22;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+}

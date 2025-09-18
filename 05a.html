@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cake Shop</title>
+  <link rel="stylesheet" href="c5a.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>CAKE SHOP</h1>
+
+  <div class="cakes">
+    <div>
+      <img src="fifth_a1.jpg" alt="Rainbow Cake">
+      <p>Rainbow Cake – Rs. 300</p>
+    </div>
+    <div>
+      <img src="fifth_a2.jpg" alt="Chocolate Cake">
+      <p>Chocolate Cake – Rs. 200</p>
+    </div>
+    <div>
+      <img src="fifth_a3.jpg" alt="Red Velvet Cake">
+      <p>Red Velvet Cake – Rs. 250</p>
+    </div>
+    <div>
+      <img src="fifth_a4.jpg" alt="Black Forest Cake">
+      <p>Black Forest Cake – Rs. 350</p>
+    </div>
+  </div>
+
+  <div class="order-box">
+    <input type="number" id="rainbow" placeholder="Rainbow Cake (Quantity)" min="0">
+    <input type="number" id="chocolate" placeholder="Chocolate Cake (Quantity)" min="0">
+    <input type="number" id="redvelvet" placeholder="Red Velvet Cake (Quantity)" min="0">
+    <input type="number" id="blackforest" placeholder="Black Forest Cake (Quantity)" min="0">
+
+    
+    <button onclick="calculateBill()">Place Order</button>
+    
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateBill() {
+      let rainbow = Number(document.getElementById("rainbow").value) || 0;
+      let chocolate = Number(document.getElementById("chocolate").value) || 0;
+      let redvelvet = Number(document.getElementById("redvelvet").value) || 0;
+      let blackforest = Number(document.getElementById("blackforest").value) || 0;
+
+      // Prevent negatives
+      rainbow = Math.max(0, rainbow);
+      chocolate = Math.max(0, chocolate);
+      redvelvet = Math.max(0, redvelvet);
+      blackforest = Math.max(0, blackforest);
+
+      const total = (rainbow * 300) + (chocolate * 200) + (redvelvet * 250) + (blackforest * 350);
+
+      document.getElementById("result").innerHTML = `
+        <p>Purchase Order Bill!!!</p>
+        <p style="color:#006400;">Total Price: Rs. ${total}</p>
+  `     ;
+    }
+
+  </script>
+
+      <footer>
+        <p> Allen Joshua R | allenjoshua@karunya.edu.in | URK23CS1138
+        </p>
+    </footer>
+
+</body>
+</html>

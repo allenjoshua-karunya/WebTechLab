@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loan EMI Calculator</title>
+  <link rel="stylesheet" href="c5b.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>💰 Loan EMI Calculator</h1>
+  
+  <div class="container">
+    <label>Loan Amount (₹):</label>
+    <input type="number" id="loan" placeholder="Enter Loan Amount">
+
+    <label>Annual Interest Rate (%):</label>
+    <input type="number" id="rate" placeholder="Enter Interest Rate">
+
+    <label>Tenure (Years):</label>
+    <input type="number" id="years" placeholder="Enter Tenure in Years">
+
+    <button onclick="calculateEMI()">Calculate EMI</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function calculateEMI() {
+      let P = Number(document.getElementById("loan").value);
+      let annualRate = Number(document.getElementById("rate").value);
+      let years = Number(document.getElementById("years").value);
+
+      if (!P || !annualRate || !years) {
+        document.getElementById("output").innerHTML =
+          `<div class="result error">⚠️ Please fill all fields</div>`;
+        return;
+      }
+
+      let R = (annualRate / 12) / 100; // monthly rate
+      let N = years * 12; // months
+
+      let EMI = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+
+      let totalRepayment = EMI * N;
+      let totalInterest = totalRepayment - P;
+
+      document.getElementById("output").innerHTML = `
+        <div class="result">Loan Amount: ₹${P.toLocaleString()}</div>
+        <div class="result">Total Interest: ₹${Math.round(totalInterest).toLocaleString()}</div>
+        <div class="result highlight">EMI: ₹${Math.round(EMI).toLocaleString()}</div>
+        <div class="result">Total Repayment: ₹${Math.round(totalRepayment).toLocaleString()}</div>
+      `;
+    }
+  </script>
+
+  <!-- Footer Section -->
+    <footer>
+        <p> Allen Joshua R | allenjoshua@karunya.edu.in | URK23CS1138
+        </p>
+    </footer>
+
+</body>
+</html>
