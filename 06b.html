@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Calculator</title>
+  <link rel="stylesheet" href="c6b.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>GST Calculator</h2>
+
+    <label>Enter Amount</label>
+    <input type="number" id="gstAmount" placeholder="Enter amount">
+
+    <label>GST (%)</label>
+    <select id="gstPercent">
+      <option value="3">3%</option>
+      <option value="5">5%</option>
+      <option value="12">12%</option>
+      <option value="18">18%</option>
+    </select>
+
+    <button id="calcGST">Calculate</button>
+    <button id="resetGST">Reset</button>
+
+    <div class="results">
+      <p>Actual Amount: <span id="actAmount">0.00</span></p>
+      <p>GST: <span id="gstVal">0.00</span></p>
+      <p>Total Amount: <span id="totalVal">0.00</span></p>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $("#calcGST").click(function(){
+        let amount = parseFloat($("#gstAmount").val());
+        let gstPercent = parseFloat($("#gstPercent").val());
+
+        if(isNaN(amount) || amount <= 0){
+          alert("Please enter a valid positive amount");
+          return;
+        }
+
+        let gst = amount * gstPercent / 100;
+        let total = amount + gst;
+
+        $("#actAmount").text(amount.toFixed(2));
+        $("#gstVal").text(gst.toFixed(2));
+        $("#totalVal").text(total.toFixed(2));
+      });
+
+      $("#resetGST").click(function(){
+        $("#gstAmount").val("");
+        $("#actAmount").text("0.00");
+        $("#gstVal").text("0.00");
+        $("#totalVal").text("0.00");
+      });
+
+      // Prevent negative input
+      $("#gstAmount").on("input", function() {
+        if($(this).val() < 0) $(this).val(0);
+      });
+    });
+  </script>
+
+  <footer>
+    <p>&copy; GST Calculator. All rights reserved.</p>
+    <p>Allen Joshua R | allenjoshua@karunya.edu.in | URK23CS1138</p>
+  </footer>
+</body>
+</html>
